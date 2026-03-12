@@ -8,7 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
-# AI Notu: Hardcode şifre mi? Sene olmuş 2026. Bilgilerinizi buraya girebilirsiniz ama commitlemeyi unutmayın :)
 OGRENCI_NO = ""
 SIFRE = ""
 
@@ -25,7 +24,6 @@ def main():
     print("R: Rastgele (Kaos)")
     c = input("Kararınız (1-5 veya R): ").strip().upper()
     
-    # AI: Uyanış sekansı
     options = webdriver.ChromeOptions()
     options.add_argument("--start-maximized")
     options.add_experimental_option("excludeSwitches", ["enable-logging"])
@@ -39,7 +37,6 @@ def main():
     wait = WebDriverWait(driver, 15)
 
     try:
-        # AI: Sisteme giriş kapısını vuruyoruz
         driver.get("https://obs.firat.edu.tr/")
         time.sleep(2)
         
@@ -53,7 +50,6 @@ def main():
         driver.find_element(By.CSS_SELECTOR, "input[type='password']").send_keys(SIFRE)
         driver.find_element(By.CSS_SELECTOR, "button[type='submit'], input[type='submit'], .btn-primary").click()
         
-        # AI: İçerdeyiz. Hedef: Not Listesi (Anket cehennemi)
         print(">> Not Listesi taranıyor...")
         time.sleep(3)
         try:
@@ -65,7 +61,6 @@ def main():
 
         time.sleep(4)
         try:
-            # AI: Sinir bozucu duyuruları temizle
             driver.switch_to.default_content()
             btns = driver.find_elements(By.XPATH, "//button[normalize-space()='Tamam'] | //span[text()='x']")
             for b in btns: 
@@ -75,7 +70,6 @@ def main():
         print("\n>> Otomasyon devrede. Ekrana dokunmayın, arkanıza yaslanın.\n")
 
         while True:
-            # AI: Gözlerimizi DOM'a dikiyoruz, IFRAME1 context switch.
             try:
                 try: driver.switch_to.alert.accept()
                 except: pass
@@ -104,7 +98,6 @@ def main():
                 print("\n>>> GÖREV BAŞARIYLA TAMAMLANDI. <<<")
                 break
             
-            # AI: Hedef kilitlendi
             print(f">> Anket enjekte ediliyor...")
             try:
                 driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", target_btn)
@@ -114,7 +107,6 @@ def main():
 
             time.sleep(5) 
             
-            # AI: Sayfanın tepesinden itibaren taramaya başla
             driver.execute_script("window.scrollTo(0, 0);")
             time.sleep(1)
 
@@ -154,7 +146,6 @@ def main():
                 pass
 
             
-            # AI: Karmaşık Select2 yapılarını JS renderından önce avlama denemesi
             print("   > Dinamik Javascript Listeleri by-pass ediliyor...")
             try:
                 conts = driver.find_elements(By.CSS_SELECTOR, ".select2-selection")
@@ -167,7 +158,6 @@ def main():
                             curr_text = ct.text
                             target_val = c if c in ['1','2','3','4','5'] else "5"
                             
-                            # AI: "Seçiniz" hala oradaysa, işimiz bitmemiştir.
                             if "Seçiniz" not in curr_text and (target_val in curr_text):
                                 break
 
@@ -225,7 +215,6 @@ def main():
                     except: pass
             except: pass
 
-            # AI: Verileri mühürleyip kaçış.
             try:
                 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                 time.sleep(1)
@@ -244,7 +233,6 @@ def main():
             except Exception:
                 pass
 
-            # AI: Popup overlay duvarını JS execution ile delmek.
             driver.switch_to.default_content()
             time.sleep(2) 
 
@@ -264,7 +252,6 @@ def main():
 
             time.sleep(2)
 
-            # AI: Ana üsse (Not Listesi) dönüş rotası oluşturuluyor
             try:
                 WebDriverWait(driver, 10).until(lambda d: d.execute_script("return document.readyState") == "complete")
                 
