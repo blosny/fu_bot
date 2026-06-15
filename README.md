@@ -24,8 +24,11 @@ Fırat Üniversitesi Öğrenci Bilgi Sistemi (OBS) için otomatik anket doldurma
    pip3 install -r requirements.txt
    ```
    *(Hata alırsanız: `pip3 install selenium` ve `pip3 install webdriver-manager` yazın)*
-   > **Not 1:** Python sürümünüz eskiyse (Python 3.7 altı), lütfen python.org adresinden güncel Python sürümünü indirin.
-   > **Not 2:** Mac'te "SSL: CERTIFICATE_VERIFY_FAILED" hatası alırsanız Uygulamalar (Applications) klasöründeki Python klasörüne gidip "Install Certificates.command" dosyasına çift tıklayın.
+   
+   **Önemli Notlar:**
+   * **Not 1:** Python sürümünüz eskiyse (Python 3.7 altı), lütfen python.org adresinden güncel Python sürümünü indirin.
+   * **Not 2:** Mac'te "SSL: CERTIFICATE_VERIFY_FAILED" hatası alırsanız Uygulamalar (Applications) klasöründeki Python klasörüne gidip "Install Certificates.command" dosyasına çift tıklayın.
+   
 3. `main.py` dosyasını açıp `OGRENCI_NO` ve `SIFRE` kısımlarına kendi bilgilerinizi yazın.
 4. Botu çalıştırın:
    ```bash
@@ -35,3 +38,6 @@ Fırat Üniversitesi Öğrenci Bilgi Sistemi (OBS) için otomatik anket doldurma
 ---
 > **DİKKAT:** Kodları GitHub gibi yerlere yüklerken veya birisiyle paylaşırken kendi şifrenizi ve öğrenci numaranızı dosyadan silmeyi unutmayın!
 
+## Lisans
+
+Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakabilirsiniz.
