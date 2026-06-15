@@ -1,19 +1,37 @@
-obs anket botu
+# OBS Anket Botu
 
-kurulum (windows):
-- terminale şunu yazın: pip install -r requirements.txt
-(hata verirse elle pip install selenium ve pip install webdriver-manager yazın)
-- main.py dosyasını açıp ogrenci_no ve sifre kısımlarına kendi bilgilerinizi yazın.
-- python main.py ile çalıştırın.
-- galiba sorunsuz çalışacak.
+Fırat Üniversitesi Öğrenci Bilgi Sistemi (OBS) için otomatik anket doldurma botu.
 
-kurulum (mac):
-- terminali açın.
-- mac'te pip ve python yerine pip3 ve python3 kullanılıyor. yani şunu yazın: pip3 install -r requirements.txt
-(yine hata verirse pip3 install selenium ve pip3 install webdriver-manager yazın)
-(not: python sürümünüz düşükse çalışmaz, python.org'dan güncelleyin. bir de "SSL: CERTIFICATE_VERIFY_FAILED" hatası alırsanız uygulamalar klasöründeki python klasörüne girip "Install Certificates.command" dosyasına çift tıklayın.)
-- main.py dosyasını açıp ogrenci_no ve sifre kısımlarına kendi bilgilerinizi yazın.
-- python3 main.py ile çalıştırın.
-- galiba sorunsuz çalışacak.
+## Kurulum ve Kullanım
 
-dikkat: kodları github'a falan atarken veya biriyile paylaşırken kendi şifrenizi silmeyi unutmayın. 
+### Windows İçin:
+1. Terminali (Komut İstemi veya PowerShell) açın.
+2. Gerekli kütüphaneleri yükleyin:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   *(Hata alırsanız: `pip install selenium` ve `pip install webdriver-manager` yazın)*
+3. `main.py` dosyasını bir metin editörüyle açıp `OGRENCI_NO` ve `SIFRE` kısımlarına kendi bilgilerinizi yazın.
+4. Botu çalıştırın:
+   ```bash
+   python main.py
+   ```
+
+### macOS (Mac) İçin:
+1. Terminal uygulamasını açın.
+2. Mac'lerde genellikle `pip` yerine `pip3`, `python` yerine `python3` kullanılır. Kütüphaneleri yükleyin:
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+   *(Hata alırsanız: `pip3 install selenium` ve `pip3 install webdriver-manager` yazın)*
+   > **Not 1:** Python sürümünüz eskiyse (Python 3.7 altı), lütfen python.org adresinden güncel Python sürümünü indirin.
+   > **Not 2:** Mac'te "SSL: CERTIFICATE_VERIFY_FAILED" hatası alırsanız Uygulamalar (Applications) klasöründeki Python klasörüne gidip "Install Certificates.command" dosyasına çift tıklayın.
+3. `main.py` dosyasını açıp `OGRENCI_NO` ve `SIFRE` kısımlarına kendi bilgilerinizi yazın.
+4. Botu çalıştırın:
+   ```bash
+   python3 main.py
+   ```
+
+---
+> **DİKKAT:** Kodları GitHub gibi yerlere yüklerken veya birisiyle paylaşırken kendi şifrenizi ve öğrenci numaranızı dosyadan silmeyi unutmayın!
+
